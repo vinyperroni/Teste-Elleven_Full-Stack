@@ -17,7 +17,7 @@ LINK : [Clique Aqui](https://arlindo-teste-elleven.surge.sh/)
 - [x] Polígono com localização dos estabelecimentos cadastrados
 
 ### Descrição do Projeto
-<p>É um projeto que permite que o usuário realize cadastro de estabelecimentos, para isso é necessário que o usuário realize um login. O usuário ao logar, consegue ver tudo o que foi cadastrado somente por ele, onde é possível que o mesmo faça o gerenciamento (insert, delete, update, ) de localidades / estabelecimentos, armazenando a cerca geográfica no banco de dados.</p>
+<p>É um projeto que permite que o usuário realize cadastro de estabelecimentos, para isso é necessário que o usuário realize um login. O usuário ao logar, consegue ver tudo o que foi cadastrado somente por ele, onde é possível que o mesmo faça o gerenciamento (CRUD) de localidades / estabelecimentos, armazenando a cerca geográfica no banco de dados.</p>
 
 # Back-End:
 ### Cobertura de testes: +80 % :heavy_check_mark:.
