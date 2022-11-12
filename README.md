@@ -1,17 +1,5 @@
 # Teste-Elleven_Full-Stack
 
-Vamos criar um mini cenário de cadastro de estabelecimentos (lojas, residência, parques, etc) para isso, é necessário que o usuário realize um login. O usuário ao logar, consegue ver tudo o que foi cadastrado somente por ele, onde é possível que o mesmo faça o gerenciamento (insert, delete, update, ) de localidades / estabelecimentos de qualquer região do Brasil, armazenando a cerca geográfica no banco de dados.
-
-Abaixo estão listados alguns campos, novos podem ser inseridos para executar a aplicação, conforme necessário.
-Criar registro e autenticação do usuário e manter logado na aplicação.
-Nome, usuario, senha.
-CRUD de estabelecimentos definindo a localização do ponto no mapa com polígono usando o Leaflet.
-Nome do local, poligono, status, data cadastro
-Requisitos:
-Banco de dados mysql ou mariadb.
-Api em node ou php
-Front em react
-
 > Status do Projeto: Concluido :heavy_check_mark:.
 
 LINK : [Clique Aqui](https://arlindo-teste-elleven.surge.sh/)
@@ -31,10 +19,12 @@ LINK : [Clique Aqui](https://arlindo-teste-elleven.surge.sh/)
 ## Descrição do Projeto
 <p></p>
 
-### Tecnologias, bibliotecas e etc:
+### Back:
+## Cobertura de testes: +80 % :heavy_check_mark:.
 
-#### Back:
-### Cobertura de testes: +80 %
+### BASE_URL: https://arlindo-teste-elleven.herokuapp.com
+
+### Tecnologias, bibliotecas e etc:
 
 - node
 - mySQL
@@ -44,7 +34,9 @@ LINK : [Clique Aqui](https://arlindo-teste-elleven.surge.sh/)
 - uuid
 - jest
 
-#### Front:
+### Front:
+
+### Tecnologias, bibliotecas e etc:
 
 - React
 - Styled Components
@@ -52,7 +44,5 @@ LINK : [Clique Aqui](https://arlindo-teste-elleven.surge.sh/)
 - react-leaflet
 - Axios
 - react-router-dom
-
-### API utilizada: [POKE API]()
 
 ## Prints
