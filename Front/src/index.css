@@ -1,0 +1,13 @@
+body {
+  margin: 0 auto;
+  width: 100vw;
+  max-width: 400px;
+
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+#login,
+#signup {
+  height: 100vh;
+}
