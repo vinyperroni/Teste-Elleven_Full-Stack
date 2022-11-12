@@ -19,7 +19,7 @@ LINK : [Clique Aqui](https://arlindo-teste-elleven.surge.sh/)
 ### Descrição do Projeto
 <p></p>
 
-# Back:
+# Back-End:
 ### Cobertura de testes: +80 % :heavy_check_mark:.
 
 ### BASE_URL: https://arlindo-teste-elleven.herokuapp.com
@@ -34,7 +34,9 @@ LINK : [Clique Aqui](https://arlindo-teste-elleven.surge.sh/)
 - uuid
 - jest
 
-### Front:
+# Front-End:
+
+### LINK : https://arlindo-teste-elleven.surge.sh/
 
 ### Tecnologias, bibliotecas e etc:
 
@@ -44,5 +46,3 @@ LINK : [Clique Aqui](https://arlindo-teste-elleven.surge.sh/)
 - react-leaflet
 - Axios
 - react-router-dom
-
-## Prints
