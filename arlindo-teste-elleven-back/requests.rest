@@ -1,0 +1,60 @@
+@base_url = https://arlindo-teste-elleven.herokuapp.com
+
+### Ping
+GET {{base_url}}/ping
+
+### Signup
+
+POST {{base_url}}/users/signup
+Content-Type: application/json
+
+{
+  "name": "Vinicius",
+  "username": "arlindovinicius",
+  "password": "12345678"
+}
+
+### Login
+
+POST {{base_url}}/users/login
+Content-Type: application/json
+
+{
+  "username": "arlindovinicius",
+  "password": "12345678"
+}
+
+### Post Establishment
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImRjN2E3OTJmLTUyMjEtNDk3Ni1iYTgwLWQ2MzdiNjU3YWFmZiIsImlhdCI6MTY2ODEwNTIwMSwiZXhwIjoxNjY4MTkxNjAxfQ.pd4_dOFD24tfmgmUlY-pmrsvg32vcodAixiHzXnczME
+POST {{base_url}}/establishments
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "name": "Paris",
+  "status": false,
+  "address": "R. Vitória, 177 - São Caetano, Itabuna - BA, 45607-045",
+  "lat": -14.813569,
+  "lng": -39.271746
+}
+
+### Edit Establishment
+PUT {{base_url}}/establishments/9e70ca19-7d99-4b82-afd8-f903537ebd19
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "name": "Editado",
+  "status": true,
+  "address": "R. Lia, 177 - São Caetano, Itabuna - BA, 45607-045",
+  "lat": -14.813569,
+  "lng": -39.271746
+}
+
+
+### GET User Establishments
+
+GET {{base_url}}/establishments
+Content-Type: application/json
+Authorization: {{token}}
+
