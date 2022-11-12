@@ -16,11 +16,11 @@ LINK : [Clique Aqui](https://arlindo-teste-elleven.surge.sh/)
 - [x] Localização do usuário no mapa caso permitido 
 - [x] Polígono com localização dos estabelecimentos cadastrados
 
-## Descrição do Projeto
+### Descrição do Projeto
 <p></p>
 
-> Back:
-## Cobertura de testes: +80 % :heavy_check_mark:.
+## Back:
+### Cobertura de testes: +80 % :heavy_check_mark:.
 
 ### BASE_URL: https://arlindo-teste-elleven.herokuapp.com
 
