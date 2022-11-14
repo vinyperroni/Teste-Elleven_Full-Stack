@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AddFormContainer, InputsContainer } from "./styled";
 import { getAddressByCep } from "../../services/getAddressByCep";
@@ -22,6 +22,8 @@ import {
 } from "@mui/material";
 
 const AddForm = (props) => {
+  const navigate = useNavigate();
+
   const { setAddFormActive, setEstablishments } = props;
 
   const [form, onChange, clear, setForm] = useForm({
@@ -56,7 +58,7 @@ const AddForm = (props) => {
         lat: coordinates.lat,
         lng: coordinates.lng,
       };
-      addEstablishment(input, clear, setIsLoading, setEstablishments);
+      addEstablishment(input, clear, setIsLoading, setEstablishments, navigate);
       setAddFormActive(false);
     } catch (error) {
       console.log(error);

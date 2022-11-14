@@ -41,7 +41,7 @@ const HomePage = () => {
   const [search, setSearch] = useState("");
 
   useEffect(() => {
-    getEstablishments(setEstablishments);
+    getEstablishments(setEstablishments, navigate);
     if (!center) {
       navigator.geolocation.getCurrentPosition(
         success,

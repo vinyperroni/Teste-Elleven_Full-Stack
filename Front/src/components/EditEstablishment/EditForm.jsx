@@ -67,7 +67,8 @@ const EditForm = (props) => {
         clear,
         setIsLoading,
         setEstablishments,
-        establishment.id
+        establishment.id,
+        navigate
       );
       setEditFormActive(false);
     } catch (error) {

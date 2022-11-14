@@ -1,6 +1,6 @@
 import axios from "axios";
 import { BASE_URL } from "../constants/urls";
-import { goToHomePage } from "../routes/coordinator";
+import { goToHomePage, goToLoginPage } from "../routes/coordinator";
 
 export const login = (body, clear, navigate, setIsLoading) => {
   setIsLoading(true);
@@ -33,4 +33,9 @@ export const signUp = (body, clear, navigate, setIsLoading) => {
       setIsLoading(false);
       alert(err.response.data.message);
     });
+};
+
+export const logOut = (navigate) => {
+  localStorage.removeItem("token");
+  goToLoginPage(navigate);
 };
