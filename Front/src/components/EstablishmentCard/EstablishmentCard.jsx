@@ -13,6 +13,7 @@ import { useNavigate } from "react-router-dom";
 const EstablismentCard = (props) => {
   const {
     establishment,
+    selectedEstablishment,
     setSelectedEstablishment,
     setEstablishments,
     setCenter,
@@ -25,11 +26,25 @@ const EstablismentCard = (props) => {
   const [status, setStatus] = useState(establishment.status);
 
   const onClickEstablishment = () => {
-    setSelectedEstablishment(null);
-    setSelectedEstablishment([
-      establishment.coordinates.lat,
-      establishment.coordinates.lng,
-    ]);
+    if (selectedEstablishment) {
+      if (
+        selectedEstablishment[0] - establishment.coordinates.lat === 0 &&
+        selectedEstablishment[1] - establishment.coordinates.lng === 0
+      ) {
+        setSelectedEstablishment(null);
+      } else {
+        setSelectedEstablishment([
+          establishment.coordinates.lat,
+          establishment.coordinates.lng,
+        ]);
+      }
+    } else {
+      setSelectedEstablishment([
+        establishment.coordinates.lat,
+        establishment.coordinates.lng,
+      ]);
+    }
+
     setCenter([establishment.coordinates.lat, establishment.coordinates.lng]);
   };
 
