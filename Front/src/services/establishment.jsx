@@ -1,11 +1,13 @@
 import axios from "axios";
 import { BASE_URL } from "../constants/urls";
+import { logOut } from "./user";
 
 export const addEstablishment = (
   body,
   clear,
   setIsLoading,
-  setEstablishments
+  setEstablishments,
+  navigate
 ) => {
   setIsLoading(true);
   axios
@@ -17,7 +19,7 @@ export const addEstablishment = (
     .then((res) => {
       clear();
       setIsLoading(false);
-      getEstablishments(setEstablishments);
+      getEstablishments(setEstablishments, navigate);
     })
     .catch((err) => {
       console.log(err);
@@ -30,7 +32,8 @@ export const editEstablishment = (
   clear,
   setIsLoading,
   setEstablishments,
-  id
+  id,
+  navigate
 ) => {
   setIsLoading(true);
   axios
@@ -42,7 +45,7 @@ export const editEstablishment = (
     .then((res) => {
       clear();
       setIsLoading(false);
-      getEstablishments(setEstablishments);
+      getEstablishments(setEstablishments, navigate);
     })
     .catch((err) => {
       console.log(err);
@@ -50,7 +53,11 @@ export const editEstablishment = (
     });
 };
 
-export const editEstablishmentStatus = (establishment, setEstablishments) => {
+export const editEstablishmentStatus = (
+  establishment,
+  setEstablishments,
+  navigate
+) => {
   const body = {
     name: establishment.name,
     status: !establishment.status,
@@ -65,14 +72,14 @@ export const editEstablishmentStatus = (establishment, setEstablishments) => {
       },
     })
     .then((res) => {
-      getEstablishments(setEstablishments);
+      getEstablishments(setEstablishments, navigate);
     })
     .catch((err) => {
       console.log(err);
     });
 };
 
-export const getEstablishments = (setEstablishments) => {
+export const getEstablishments = (setEstablishments, navigate) => {
   axios
     .get(`${BASE_URL}/establishments`, {
       headers: {
@@ -84,11 +91,14 @@ export const getEstablishments = (setEstablishments) => {
       setEstablishments(response.data);
     })
     .catch((error) => {
+      if (error.response.status === 401) {
+        logOut(navigate);
+      }
       console.log(error);
     });
 };
 
-export const deleteEstablishments = (id, setEstablishments) => {
+export const deleteEstablishments = (id, setEstablishments, navigate) => {
   axios
     .delete(`${BASE_URL}/establishments/${id}`, {
       headers: {
@@ -97,7 +107,7 @@ export const deleteEstablishments = (id, setEstablishments) => {
       },
     })
     .then((response) => {
-      getEstablishments(setEstablishments);
+      getEstablishments(setEstablishments, navigate);
     })
     .catch((error) => {
       console.log(error);

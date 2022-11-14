@@ -6,9 +6,9 @@ import EditEstablishment from "../EditEstablishment/EditEstablishment";
 import { CardContainer } from "./styled";
 import {
   deleteEstablishments,
-  editEstablishment,
   editEstablishmentStatus,
 } from "../../services/establishment";
+import { useNavigate } from "react-router-dom";
 
 const EstablismentCard = (props) => {
   const {
@@ -17,6 +17,8 @@ const EstablismentCard = (props) => {
     setEstablishments,
     setCenter,
   } = props;
+
+  const navigate = useNavigate();
 
   const [editFormActive, setEditFormActive] = useState(false);
 
@@ -37,7 +39,7 @@ const EstablismentCard = (props) => {
 
   const onChangeStatus = (event) => {
     setStatus(event.target.checked);
-    editEstablishmentStatus(establishment, setEstablishments);
+    editEstablishmentStatus(establishment, setEstablishments, navigate);
   };
 
   return (
@@ -56,7 +58,7 @@ const EstablismentCard = (props) => {
       <p>Criado em: {establishment.createAt}</p>
       <IconButton
         onClick={() =>
-          deleteEstablishments(establishment.id, setEstablishments)
+          deleteEstablishments(establishment.id, setEstablishments, navigate)
         }
       >
         <DeleteIcon />
