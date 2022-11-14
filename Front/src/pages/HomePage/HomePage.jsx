@@ -58,7 +58,9 @@ const HomePage = () => {
     const map = useMap();
 
     useEffect(() => {
-      map.flyTo(center);
+      if (selectedEstablishment) {
+        map.flyTo(center);
+      }
     }, [center]);
 
     return null;
@@ -71,6 +73,10 @@ const HomePage = () => {
       },
       locationfound(e) {
         setLocation([e.latlng.lat, e.latlng.lng]);
+        console.log("location");
+        if (selectedEstablishment) {
+          setSelectedEstablishment(null);
+        }
         map.flyTo(e.latlng, map.getZoom());
       },
     });
@@ -115,8 +121,7 @@ const HomePage = () => {
             {selectedEstablishment?.length === 2 && (
               <Marker position={selectedEstablishment}></Marker>
             )}
-            {!selectedEstablishment && <FlyToLocation />}
-
+            <FlyToLocation />
             {selectedEstablishment && <FlyMapTo />}
           </MapContainer>
         )}
@@ -149,6 +154,7 @@ const HomePage = () => {
                 <EstablismentCard
                   key={establishment.name}
                   establishment={establishment}
+                  selectedEstablishment={selectedEstablishment}
                   setSelectedEstablishment={setSelectedEstablishment}
                   setEstablishments={setEstablishments}
                   setCenter={setCenter}
