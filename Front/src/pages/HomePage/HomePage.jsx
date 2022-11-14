@@ -58,7 +58,6 @@ const HomePage = () => {
     const map = useMap();
 
     useEffect(() => {
-      console.log("aqui");
       map.flyTo(center);
     }, [center]);
 
