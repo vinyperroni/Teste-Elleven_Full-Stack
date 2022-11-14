@@ -88,18 +88,22 @@ const AddForm = (props) => {
             onChange={onChange}
             label={"CEP"}
             variant={"outlined"}
+            onBlur={() => getAddressByCep(form, setForm)}
             fullWidth
             required
             type={"number"}
             inputProps={{
-              maxLength: 8,
               minLength: 8,
+            }}
+            onInput={(e) => {
+              e.target.value = Math.max(0, parseInt(e.target.value))
+                .toString()
+                .slice(0, 8);
             }}
           />
           <TextField
             size="small"
             name={"street"}
-            onFocus={() => getAddressByCep(form, setForm)}
             value={form.street}
             onChange={onChange}
             label={"Logradouro"}
